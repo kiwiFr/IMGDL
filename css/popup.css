@@ -1,0 +1,111 @@
+
+
+body {
+    width: 560px;
+    margin: 0 auto;
+    background: #f2f2f2;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.define-attr {
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.define-attr input {
+    width: 100%;
+}
+
+.batch-download {
+    margin: 20px 0px 0px 20px;
+}
+.img-container {
+    width: 100%;
+}
+
+.img-list {
+    display: inline-block;
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 200px;
+    text-align: center;
+    background: #fff;
+}
+
+.img-item {
+    width: 160px;
+    height: 160px;
+    overflow: scroll;
+}
+
+.download-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.img-item::nth-child(4n) {
+    margin-right: 20px;
+}
+
+.img-item img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.img-info {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+    line-height: 1;
+}
+
+.check-download {
+    position: absolute;
+    right: 10px;
+    top: -78px;
+}
+
+.filter {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.filter-item {
+    flex: 1;
+}
+
+.filter-item input{
+    width: 150px;
+    margin-left: 10px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid skyblue;
+}
+.alert-box {
+    margin: 20px;
+    text-align: center;
+}

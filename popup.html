@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>图片下载插件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <script src="js/vue.min.js"></script>
+    <script src="js/popup.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--筛选长和宽-->
+        <div class="filter">
+            <label class="filter-item">
+                <span>width >= : </span><input type="number" v-model="imgWidth">                
+            </label>
+            <label class="filter-item">
+                <span>height >= : </span><input type="number" v-model="imgHeight">                
+            </label>
+        </div>
+
+        <!-- 批量下载 -->
+        <div v-if="!isBatchDownload">
+            <button type="button" class="btn btn-primary btn-sm batch-download" @click="isBatchDownload=!isBatchDownload" >批量下载</button>
+        </div>
+        <div v-if="isBatchDownload">
+            <button type="button" class="btn btn-light btn-sm batch-download" @click="isBatchDownload=!isBatchDownload">取消</button>
+            <button type="button" class="btn btn-primary btn-sm batch-download" @click="onBatchDownload()">确定</button>
+        </div>
+
+        <!-- 图片 -->
+        <div class="alert alert-success alert-box">图片</div>
+        <ul class="img-container">
+            <li class="img-list" v-for="img in imgUrls" v-if="img.width >= imgWidth && img.height >= imgHeight">
+                <div class="download-button" @click="downLoad(img.src)" v-if="!isBatchDownload">下载</div>
+                <div class="check-download" v-if="isBatchDownload">
+                    <input type="checkbox" class="checkbox" value="" @click="onCheckUrl(img.src, $event)">
+                </div>
+                <div class="img-info">
+                    <span>{{img.width}} X {{img.height}}</span>
+                </div>
+                <div class="img-item">
+                    <img :src="img.src"/>
+                </div>
+            </li>
+        </ul>
+
+        <!-- 背景图片 -->
+        <div class="alert alert-warning alert-box">背景图片</div>
+        <ul class="img-container">
+            <li class="img-list" v-for="img in backgroundImgUrls" v-if="img.width >= imgWidth && img.height >= imgHeight">
+                <div class="download-button" @click="downLoad(img.src)" v-if="!isBatchDownload">下载</div>
+                <div class="check-download" v-if="isBatchDownload">
+                    <input type="checkbox" class="checkbox" value="" @click="onCheckUrl(img.src, $event)">
+                </div>
+                <div class="img-info">
+                    <span>{{img.width}} X {{img.height}}</span>
+                </div>
+                <div class="img-item">
+                    <img :src="img.src"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+
