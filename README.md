@@ -1,5 +1,11 @@
 # IMGDL(谷歌图片下载助手)
 
+### 功能展示
+
+![Image text](https://raw.githubusercontent.com/kiwiFr/IMG/master/IMGDL_imgs/IMGDL7.jpg)
+
+![Image text](https://raw.githubusercontent.com/kiwiFr/IMG/master/IMGDL_imgs/8.png)
+
 ### 谷歌浏览器安装该插件方法 
 
 #### 1.下载文件 并解压
